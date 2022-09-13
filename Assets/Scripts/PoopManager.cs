@@ -7,18 +7,35 @@ public class PoopManager : MonoBehaviour
 {
     public GameObject poopPrefab;
     private int count = 0;
-    private List<Transform> poopSpawned;
+    private List<CarmenBehaviour> poops = new List<CarmenBehaviour>();
+    private List<CarmenBehaviour> poopsSpawned = new List<CarmenBehaviour>(10);
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        CreatePoop(transform.position);
+        StartCoroutine("WaitForNextPoop");
     }
 
     // Update is called once per frame
-    void CreatePoop()
+
+    IEnumerator WaitForNextPoop()
     {
-        GameObject instantiatePoop = Instantiate(poopPrefab, transform.position, Quaternion.identity);
-        instantiatePoop.name = "Poop " + count.ToString();
+        yield return new WaitForSeconds(2);
+        
+        for (int i = 0; i < poopsSpawned.Count; i++)
+        {
+            CreatePoop(transform.position);
+        }
+        
+    }
+    private void CreatePoop(Vector3 position)
+    {
+        GameObject instantiatePoop = Instantiate(poopPrefab, position, Quaternion.identity);
+        CarmenBehaviour poop = instantiatePoop.GetComponent<CarmenBehaviour>();
+        poops.Add(poop);
+        //poop.manager = this;
+
         count++;
         print("Number of poops: " + count);
 

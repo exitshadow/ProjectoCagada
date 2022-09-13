@@ -9,8 +9,9 @@ public class CarmenBehaviour : MonoBehaviour
     private NavMeshAgent agent;
     public State status = State.walking;
     private Transform waypointTransform;
-    public Transform groupTransform, centerEye;
-
+    public Transform groupTransform;
+    
+    //public Transform centerEye;
     //public Transform fruitTransform;
 
     public PoopManager manager;
@@ -38,6 +39,9 @@ public class CarmenBehaviour : MonoBehaviour
             GetNewDestination();
         }
     }
+
+
+
 
     // private bool DetectFruit(){
     //     Vector3 direction = fruitTransform.position - centerEye.position;
