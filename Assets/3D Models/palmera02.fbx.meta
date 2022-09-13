@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54dda3d8028750449927587117bba5f9
+guid: 1cd1bf366bd603d4f8923b3fd5016fb6
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,33 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 7652effbe0bac374fa20fdc41108cc9b, type: 2}
+      name: Coconuts
+    second: {fileID: 2100000, guid: b338d54a2d5d1d74a8c075286b46fd20, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: a6158f3f0005b9243962b50502ee1ed1, type: 2}
+      name: Leaves01
+    second: {fileID: 2100000, guid: 125b5e1b7e014334f852ad39aa4e3b87, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 4c95309678bb0ea4d8a5489fb621e7a8, type: 2}
+      name: Leaves02
+    second: {fileID: 2100000, guid: fa906a312bde7784986d4c3a74d38b5c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: a92f880369ecf7c4886c85aa175d2252, type: 2}
+      name: LightBrown
+    second: {fileID: 2100000, guid: 1c68043c35e67a84abd9ad91aae66d70, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: e4b4e46b2f208aa48b2bf6ce8197e7fd, type: 2}
+      name: Trunk
+    second: {fileID: 2100000, guid: 0ad7ff1a1ed0eec4cab56571c171f31b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: f93da6830281250439bdbf9a8c7b5803, type: 2}
+      name: TrunkRings
+    second: {fileID: 2100000, guid: f35379c70d4557749b8c10475359c386, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -65,15 +65,15 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -106,7 +106,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -118,7 +118,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.1
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
