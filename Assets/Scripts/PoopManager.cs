@@ -8,7 +8,7 @@ public class PoopManager : MonoBehaviour
     public GameObject poopPrefab;
     private int count = 0;
     private List<CarmenBehaviour> poops = new List<CarmenBehaviour>();
-    private List<CarmenBehaviour> poopsSpawned = new List<CarmenBehaviour>(10);
+    private List<CarmenBehaviour> poopsSpawned = new List<CarmenBehaviour>();
 
     // Start is called before the first frame update
     void Start()
