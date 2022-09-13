@@ -23,12 +23,9 @@ public class PoopManager : MonoBehaviour
         Debug.Log("enter coroutine");
         while(true)
         {
-        yield return new WaitForSeconds(2);
-        for (var i = 0; i < poopsSpawned.Count; i++)
-        {
+            yield return new WaitForSeconds(2);
             CreatePoop(transform.position);   
-        }
-        print("poop");  
+            print("poop");  
         }
     }
 
