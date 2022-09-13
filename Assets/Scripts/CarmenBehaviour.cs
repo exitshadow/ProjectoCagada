@@ -8,7 +8,10 @@ public class CarmenBehaviour : MonoBehaviour
     public enum State { walking, eating }
     private NavMeshAgent agent;
     public State status = State.walking;
-    public Transform fruitTransform, waypointTransform, groupTransform, centerEye;
+    private Transform waypointTransform;
+    public Transform groupTransform, centerEye;
+
+    //public Transform fruitTransform;
 
     public PoopManager manager;
 
@@ -36,47 +39,47 @@ public class CarmenBehaviour : MonoBehaviour
         }
     }
 
-    private bool DetectFruit(){
-        Vector3 direction = fruitTransform.position - centerEye.position;
-        direction = direction.normalized;
+    // private bool DetectFruit(){
+    //     Vector3 direction = fruitTransform.position - centerEye.position;
+    //     direction = direction.normalized;
 
-        float angle = Vector3.Angle(centerEye.forward, direction);
+    //     float angle = Vector3.Angle(centerEye.forward, direction);
 
-        if (angle <= 45) {
-            RaycastHit raycasthit;
-            Debug.DrawRay(centerEye.position, direction * 100, Color.red, 1f);
+    //     if (angle <= 45) {
+    //         RaycastHit raycasthit;
+    //         Debug.DrawRay(centerEye.position, direction * 100, Color.red, 1f);
 
-            if(Physics.Raycast(centerEye.position, direction, out raycasthit)){
-                Debug.Log($"Hit: {raycasthit.transform.name}");
-                if(raycasthit.transform == fruitTransform){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+    //         if(Physics.Raycast(centerEye.position, direction, out raycasthit)){
+    //             Debug.Log($"Hit: {raycasthit.transform.name}");
+    //             if(raycasthit.transform == fruitTransform){
+    //                 return true;
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
 
-    void UpdateWalking(){
-        if(DetectFruit()){
-            status = State.eating;
-        }
-    }
+//     void UpdateWalking(){
+//         if(DetectFruit()){
+//             status = State.eating;
+//         }
+//     }
 
-    void UpdateEating(){
-        agent.SetDestination(fruitTransform.position);
-        if(!DetectFruit()){
-            status = State.walking;
-            GetNewDestination();
-        }
-    }
+//     void UpdateEating(){
+//         agent.SetDestination(fruitTransform.position);
+//         if(!DetectFruit()){
+//             status = State.walking;
+//             GetNewDestination();
+//         }
+//     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        switch (status)
-        {
-            case State.walking: UpdateWalking(); break;
-            case State.eating: UpdateEating(); break; 
-        }
-    }
+//     // Update is called once per frame
+//     void Update()
+//     {
+//         switch (status)
+//         {
+//             case State.walking: UpdateWalking(); break;
+//             case State.eating: UpdateEating(); break; 
+//         }
+//     }
 }

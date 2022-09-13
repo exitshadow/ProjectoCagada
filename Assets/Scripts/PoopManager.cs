@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class PoopManager : MonoBehaviour
 {
     public GameObject poopPrefab;
-    int count = 0;
+    private int count = 0;
     private List<Transform> poopSpawned;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class PoopManager : MonoBehaviour
         GameObject instantiatePoop = Instantiate(poopPrefab, transform.position, Quaternion.identity);
         instantiatePoop.name = "Poop " + count.ToString();
         count++;
+        print("Number of poops: " + count);
 
     }
 }
