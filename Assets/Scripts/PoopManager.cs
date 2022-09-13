@@ -22,22 +22,23 @@ public class PoopManager : MonoBehaviour
     IEnumerator WaitForNextPoop()
     {
         yield return new WaitForSeconds(2);
-        
-        for (int i = 0; i < poopsSpawned.Count; i++)
+        for (var i = 0; i < poopsSpawned.Count; i++)
         {
-            CreatePoop(transform.position);
+            CreatePoop(transform.position);   
         }
-        
+        print("coroutine");  
     }
+
     private void CreatePoop(Vector3 position)
     {
         GameObject instantiatePoop = Instantiate(poopPrefab, position, Quaternion.identity);
         CarmenBehaviour poop = instantiatePoop.GetComponent<CarmenBehaviour>();
         poops.Add(poop);
-        //poop.manager = this;
+            //poop.manager = this;
 
         count++;
         print("Number of poops: " + count);
+        
 
     }
 }
