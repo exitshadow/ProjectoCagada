@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,12 +20,16 @@ public class PoopManager : MonoBehaviour
 
     IEnumerator WaitForNextPoop()
     {
+        Debug.Log("enter coroutine");
+        while(true)
+        {
         yield return new WaitForSeconds(2);
         for (var i = 0; i < poopsSpawned.Count; i++)
         {
             CreatePoop(transform.position);   
         }
-        print("coroutine");  
+        print("poop");  
+        }
     }
 
     private void CreatePoop(Vector3 position)
