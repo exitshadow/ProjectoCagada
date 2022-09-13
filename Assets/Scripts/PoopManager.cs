@@ -5,6 +5,7 @@ using UnityEngine;
 public class PoopManager : MonoBehaviour
 {
     public GameObject poopPrefab;
+    public GameObject carmen;
     private int count = 0;
     private List<CarmenBehaviour> poops = new List<CarmenBehaviour>();
     private List<CarmenBehaviour> poopsSpawned = new List<CarmenBehaviour>();
@@ -20,18 +21,19 @@ public class PoopManager : MonoBehaviour
 
     IEnumerator WaitForNextPoop()
     {
+        float randomFactor = Random.Range(.3f,1.5f);
         Debug.Log("enter coroutine");
         while(true)
         {
-            yield return new WaitForSeconds(2);
-            CreatePoop(transform.position);   
+            yield return new WaitForSeconds(1 + randomFactor);
+            CreatePoop(carmen.transform.position);   
             print("poop");  
         }
     }
 
     private void CreatePoop(Vector3 position)
     {
-        GameObject instantiatePoop = Instantiate(poopPrefab, position, Quaternion.identity);
+        GameObject instantiatePoop = Instantiate(poopPrefab, position, carmen.transform.rotation);
         CarmenBehaviour poop = instantiatePoop.GetComponent<CarmenBehaviour>();
         poops.Add(poop);
             //poop.manager = this;
