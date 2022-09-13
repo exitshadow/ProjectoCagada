@@ -7,14 +7,17 @@ public class PoopManager : MonoBehaviour
     public GameObject poopPrefab;
     public GameObject carmen;
     private int count = 0;
-    private List<CarmenBehaviour> poops = new List<CarmenBehaviour>();
-    private List<CarmenBehaviour> poopsSpawned = new List<CarmenBehaviour>();
+    public List<Poop> poops = new List<Poop>();
 
     // Start is called before the first frame update
     void Start()
     {
-        CreatePoop(transform.position);
-        StartCoroutine("WaitForNextPoop");
+        if (carmen != null)
+        {
+            CreatePoop(transform.position);
+            StartCoroutine("WaitForNextPoop");
+
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class PoopManager : MonoBehaviour
     private void CreatePoop(Vector3 position)
     {
         GameObject instantiatePoop = Instantiate(poopPrefab, position, carmen.transform.rotation);
-        CarmenBehaviour poop = instantiatePoop.GetComponent<CarmenBehaviour>();
+        Poop poop = instantiatePoop.GetComponent<Poop>();
         poops.Add(poop);
             //poop.manager = this;
 
