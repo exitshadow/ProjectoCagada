@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poopPrefab: {fileID: 8026639863869431161, guid: 4d2ed12f40c84c44e8ac5f2a9abd6f2b, type: 3}
+  carmen: {fileID: 804139568}
 --- !u!4 &1445920874
 Transform:
   m_ObjectHideFlags: 0

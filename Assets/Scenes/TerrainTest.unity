@@ -735,6 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poopPrefab: {fileID: 8026639863869431161, guid: 4d2ed12f40c84c44e8ac5f2a9abd6f2b, type: 3}
   carmen: {fileID: 1890514560}
+  poops: []
 --- !u!4 &819425606
 Transform:
   m_ObjectHideFlags: 0
@@ -1058,11 +1059,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fbd0493d8690dfb47b02ea598a6cad26, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fbd0493d8690dfb47b02ea598a6cad26, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fbd0493d8690dfb47b02ea598a6cad26, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1070,7 +1071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fbd0493d8690dfb47b02ea598a6cad26, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fbd0493d8690dfb47b02ea598a6cad26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1090,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbd0493d8690dfb47b02ea598a6cad26, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd0493d8690dfb47b02ea598a6cad26, type: 3}
