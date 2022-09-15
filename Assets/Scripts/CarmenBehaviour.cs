@@ -41,8 +41,6 @@ public class CarmenBehaviour : MonoBehaviour
     }
 
 
-
-
     // private bool DetectFruit(){
     //     Vector3 direction = fruitTransform.position - centerEye.position;
     //     direction = direction.normalized;
