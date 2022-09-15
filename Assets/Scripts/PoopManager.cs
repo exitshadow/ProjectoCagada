@@ -4,28 +4,38 @@ using UnityEngine;
 
 public class PoopManager : MonoBehaviour
 {
+    [HideInInspector] public List<Poop> activePoops = new List<Poop>();
+    [HideInInspector] public List<Poop> thrownPoops = new List<Poop>();
     public GameObject poopPrefab;
     public GameObject carmen;
+    public int maxCount = 20;
     private int count = 0;
-    public List<Poop> poops = new List<Poop>();
+    private bool poopsAreCleared = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (carmen != null)
         {
             CreatePoop(transform.position);
             StartCoroutine("WaitForNextPoop");
-
         }
     }
 
-    // Update is called once per frame
+    void Update()
+    {
+        if (count == maxCount) StopCoroutine("WaitForNextPoop");
+        if (thrownPoops.Count == maxCount && !poopsAreCleared)
+        {
+            Debug.Log("You have cleared all the poops!");
+            poopsAreCleared = true;
+        }
+    }
 
     IEnumerator WaitForNextPoop()
     {
-        float randomFactor = Random.Range(.3f,1.5f);
         Debug.Log("enter coroutine");
+
+        float randomFactor = Random.Range(.3f,1.5f);
         while(true)
         {
             yield return new WaitForSeconds(1 + randomFactor);
@@ -38,12 +48,9 @@ public class PoopManager : MonoBehaviour
     {
         GameObject instantiatePoop = Instantiate(poopPrefab, position, carmen.transform.rotation);
         Poop poop = instantiatePoop.GetComponent<Poop>();
-        poops.Add(poop);
-            //poop.manager = this;
-
+        activePoops.Add(poop);
+        if(carmen != null) poop.poopManager = this;
         count++;
         print("Number of poops: " + count);
-        
-
     }
 }
